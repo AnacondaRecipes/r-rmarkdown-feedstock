@@ -82,7 +82,6 @@ extra:
     - bgruening
     - mdehollander
     - jdblischak
-    - mingwandroid
 
 # The original CRAN metadata for this package was:
 
