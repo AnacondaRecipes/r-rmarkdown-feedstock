@@ -37,27 +37,27 @@ requirements:
     - r-base {{ r_version }}
     - r-bslib >=0.2.5.1
     - r-evaluate >=0.13
-    - r-htmltools >=0.3.5
+    - r-htmltools >=0.3.6
     - r-jquerylib
-    - r-jsonlite
+    - r-jsonlite >=1.6
     - r-knitr >=1.22
-    - r-stringr >=1.2.0
+    - r-stringr >=1.4.0
     - r-tinytex >=0.31
-    - r-xfun >=0.30
-    - r-yaml >=2.1.19
+    - r-xfun >=0.6
+    - r-yaml >=2.2.0
 
   run:
     - r-base {{ r_version }}
     - r-bslib >=0.2.5.1
     - r-evaluate >=0.13
-    - r-htmltools >=0.3.5
+    - r-htmltools >=0.3.6
     - r-jquerylib
-    - r-jsonlite
+    - r-jsonlite >=1.6
     - r-knitr >=1.22
-    - r-stringr >=1.2.0
+    - r-stringr >=1.4.0
     - r-tinytex >=0.31
-    - r-xfun >=0.30
-    - r-yaml >=2.1.19
+    - r-xfun >=0.6
+    - r-yaml >=2.2.0
 
 test:
   commands:
