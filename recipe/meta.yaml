@@ -24,6 +24,9 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  # weird error on windows
+  missing_dso_whitelist:
+    - $RPATH/R.dll  # [win]
 
 # Suggests: digest, dygraphs, fs, rsconnect, downlit (>= 0.4.0), katex (>= 1.4.0), sass (>= 0.4.0), shiny (>= 1.6.0), testthat (>= 3.0.3), tibble, tufte, vctrs, withr (>= 2.4.2)
 requirements:
