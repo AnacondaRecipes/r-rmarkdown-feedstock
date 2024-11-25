@@ -1,4 +1,4 @@
-{% set version = "2.10" %}
+{% set version = "2.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmarkdown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: 53a65942faaeca21e5232b86cea6b8624069913e4c1946e87c0624a97d624cdc
+  sha256: b0060c10a5992f6430f09388674d580984c500990453daab8a26b317301cd9a4
 
 build:
   merge_build_host: true  # [win]
@@ -26,21 +26,23 @@ requirements:
   host:
     - r-base
     - r-base64enc
-    - r-evaluate
+    - r-evaluate 
     - r-htmltools
     - r-jsonlite
-    - r-knitr
+    - r-knitr 
+    - r-mime
     - r-stringr
     - r-tinytex
     - r-xfun
-    - r-yaml
+    - r-yaml 
   run:
     - r-base
     - r-base64enc
     - r-evaluate
     - r-htmltools
     - r-jsonlite
-    - r-knitr
+    - r-knitr 
+    - r-mime
     - r-stringr
     - r-tinytex
     - r-xfun
