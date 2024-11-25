@@ -25,30 +25,30 @@ requirements:
     - {{ posix }}zip               # [win]
    # - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base {{ rbase }}
-    - r-bslib >=0.2.5.1
-    - r-evaluate >=0.13
-    - r-htmltools >=0.3.5
+    - r-base 
+    - r-bslib
+    - r-evaluate
+    - r-htmltools
     - r-jquerylib
     - r-jsonlite
-    - r-knitr >=1.22
-    - r-stringr >=1.2.0
-    - r-tinytex >=0.31
-    - r-xfun >=0.21
-    - r-yaml >=2.1.19
+    - r-knitr
+    - r-stringr
+    - r-tinytex
+    - r-xfun
+    - r-yaml
   run:
-    - r-base {{ rbase }}
-    - r-bslib >=0.2.5.1
-    - r-evaluate >=0.13
-    - r-htmltools >=0.3.5
+    - r-base
+    - r-bslib
+    - r-evaluate
+    - r-htmltools
     - r-jquerylib
     - r-jsonlite
-    - r-knitr >=1.22
-    - r-stringr >=1.2.0
-    - r-tinytex >=0.31
-    - r-xfun >=0.21
-    - r-yaml >=2.1.19
-    - pandoc >=1.12.3,<3.0
+    - r-knitr
+    - r-stringr
+    - r-tinytex
+    - r-xfun 
+    - r-yaml
+    - pandoc
 
 test:
   requires:
