@@ -1,4 +1,6 @@
+
 {% set version = "2.14" %}
+
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +12,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmarkdown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: e9ec17afa4d9d6e8cf555b56e0c00acc189d8ec0b4406680b14d71d62f0c3220
+  sha256: 39c2a4c51de8c65886a7a3d7e44c3d21167069a89ee26c0f5db8243b70db9b92
 
 build:
   merge_build_host: true  # [win]
@@ -19,16 +21,26 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  # weird error on windows
+  missing_dso_whitelist:
+    - $RPATH/R.dll  # [win]
+
+
 
 requirements:
   build:
-    - {{ posix }}zip               # [win]
+    - {{ posix }}zip                # [win]
+
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+  host:
+    - r-base {{ r_version }}
       # - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base {{ rbase }}
+
     - r-bslib >=0.2.5.1
     - r-evaluate >=0.13
-    - r-htmltools >=0.3.5
+    - r-htmltools >=0.5.1
     - r-jquerylib
     - r-jsonlite
     - r-knitr >=1.22
@@ -37,10 +49,11 @@ requirements:
     - r-xfun >=0.30
     - r-yaml >=2.1.19
   run:
+
     - r-base {{ rbase }}
     - r-bslib >=0.2.5.1
     - r-evaluate >=0.13
-    - r-htmltools >=0.3.5
+    - r-htmltools >=0.5.1
     - r-jquerylib
     - r-jsonlite
     - r-knitr >=1.22
