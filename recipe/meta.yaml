@@ -69,6 +69,7 @@ about:
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  dev_url: https://github.com/rstudio/rmarkdown
 
 extra:
   recipe-maintainers:
