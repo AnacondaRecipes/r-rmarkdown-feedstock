@@ -1,4 +1,6 @@
-{% set version = "2.19" %}
+
+{% set version = "2.14" %}
+
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -27,10 +29,15 @@ build:
 
 requirements:
   build:
-    - {{ posix }}zip               # [win]
+    - {{ posix }}zip                # [win]
+
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base {{ r_version }}
+      # - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+  host:
+    - r-base {{ rbase }}
+
     - r-bslib >=0.2.5.1
     - r-evaluate >=0.13
     - r-htmltools >=0.5.1
@@ -42,7 +49,8 @@ requirements:
     - r-xfun >=0.30
     - r-yaml >=2.1.19
   run:
-    - r-base {{ r_version }}
+
+    - r-base {{ rbase }}
     - r-bslib >=0.2.5.1
     - r-evaluate >=0.13
     - r-htmltools >=0.5.1
