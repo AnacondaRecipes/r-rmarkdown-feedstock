@@ -51,9 +51,6 @@ requirements:
     - pandoc 
 
 test:
-  requires:
-    - xorg-libxt                             # [not win]
-    - xorg-libsm                             # [not win]
   commands:
     - $R -e "library('rmarkdown')"           # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
