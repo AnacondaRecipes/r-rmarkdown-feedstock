@@ -10,6 +10,6 @@ upload_channels:
   - services
 
 channels:
-  - r
+#  - r
   - services
   - services-build-deps
